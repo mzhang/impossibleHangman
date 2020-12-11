@@ -6,9 +6,12 @@ let mistakes = 0;
 let guessed = [];
 let wordStatus = null;
 
+let ansLength = null;
+
 function randomWord() {
   answer = wordBank[Math.floor(Math.random() * wordBank.length)].trim();
   console.log(answer)
+  ansLength = answer.length;
 }
 
 function generateButtons() {
@@ -29,6 +32,8 @@ function generateButtons() {
 function handleGuess(chosenLetter) {
   guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
   document.getElementById(chosenLetter).setAttribute('disabled', true);
+
+
   if (answer.indexOf(chosenLetter) >= 0) {
     guessedWord();
     checkIfGameWon();

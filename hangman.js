@@ -1,4 +1,4 @@
-var wordBank = document.getElementById("wordBank").innerHTML.split("\n")
+var wordBank = [];
 
 let answer = '';
 let maxWrong = 6;
@@ -74,14 +74,17 @@ function updateMistakes() {
 }
 
 function reset() {
-  mistakes = 0;
-  guessed = [];
-  document.getElementById('hangmanPic').src = './images/0.jpg';
+  $.getJSON('https://raw.githubusercontent.com/mzhang/impossibleHangman/master/wordBank.json', function(data) {
+    wordBank = data;
+    mistakes = 0;
+    guessed = [];
+    document.getElementById('hangmanPic').src = './images/0.jpg';
 
-  randomWord();
-  guessedWord();
-  updateMistakes();
-  generateButtons();
+    randomWord();
+    guessedWord();
+    updateMistakes();
+    generateButtons();
+  });
 }
 
 document.getElementById('maxWrong').innerHTML = maxWrong;

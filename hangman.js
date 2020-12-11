@@ -80,7 +80,7 @@ function updateMistakes() {
 }
 
 function reset() {
-  $.getJSON('https://raw.githubusercontent.com/mzhang/impossibleHangman/master/wordBank.json', function(data) {
+  $.getJSON('https://raw.githubusercontent.com/mzhang/impossibleHangman/master/megabank.json', function(data) {
     wordBank = data;
     mistakes = 0;
     guessed = [];

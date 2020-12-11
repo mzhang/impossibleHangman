@@ -34,9 +34,8 @@ function generateButtons() {
 
 function handleGuess(chosenLetter) {
   wordBank = wordBank.filter(word => word.length === answer.length);
-  console.log(wordBank);
   wordBank = wordBank.filter(word => word.indexOf(chosenLetter) < 0);
-  randomWord();
+  if (wordBank.length > 0) randomWord();
 
   guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
   document.getElementById(chosenLetter).setAttribute('disabled', true);

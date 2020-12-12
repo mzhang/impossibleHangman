@@ -63,14 +63,16 @@ function updateAnswer() {
 function checkIfGameWon() {
   console.log(wordStatus)
   if (wordStatus === answer) {
-    document.getElementById('keyboard').innerHTML = 'You... actually won!';
+    document.getElementById('message').innerHTML = 'You... actually won!';
+    document.getElementById('keyboard').innerHTML = ""
   }
 }
 
 function checkIfGameLost() {
   if (mistakes === maxWrong) {
-    document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
-    document.getElementById('keyboard').innerHTML = 'You Lost!!!';
+    document.getElementById('wordSpotlight').innerHTML = 'The answer was "' + answer + '"';
+    document.getElementById('message').innerHTML = 'Better luck next time?';
+    document.getElementById('keyboard').innerHTML = ""
   }
 }
 
@@ -84,6 +86,7 @@ function updateMistakes() {
 }
 
 function reset() {
+  document.getElementById('message').innerHTML = 'Good luck!';
   $.getJSON('https://raw.githubusercontent.com/mzhang/impossibleHangman/master/megaBank.json', function(data) {
     wordBank = data;
     mistakes = 0;

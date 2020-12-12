@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
-.cheat {
+.float-right {
   display:none
 }
 
-.hover:hover + .cheat {
+.hover:hover + .float-right {
   display:block;
+  position: fixed;
+  color: lightgrey;
 }
 html {
   background-image: url(./assets/parallax.webp);
   background-attachment: fixed;
   background-size: cover;
 }
-
 
 .outer {
   display: table;
@@ -23,7 +24,7 @@ html {
 }
 
 h1 {
-  padding-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 .middle {

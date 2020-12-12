@@ -15,6 +15,7 @@ function removeWord(wordBank, word) {
 function randomWord() {
   answer = wordBank[Math.floor(Math.random() * wordBank.length)];
   console.log(answer);
+  updateAnswer();
 }
 
 function generateButtons() {
@@ -52,14 +53,17 @@ function handleGuess(chosenLetter) {
 }
 
 function updateHangmanPicture() {
-  document.getElementById('hangmanPic').src = './images/' + mistakes + '.png';
+  document.getElementById('hangmanPic').src = './assets/' + mistakes + '.png';
+}
+
+function updateAnswer() {
+  document.getElementById('answer').innerHTML = answer;
 }
 
 function checkIfGameWon() {
-
   console.log(wordStatus)
   if (wordStatus === answer) {
-    document.getElementById('keyboard').innerHTML = 'You Won!!!';
+    document.getElementById('keyboard').innerHTML = 'You... actually won!';
   }
 }
 
@@ -84,7 +88,7 @@ function reset() {
     wordBank = data;
     mistakes = 0;
     guessed = [];
-    document.getElementById('hangmanPic').src = './images/0.png';
+    document.getElementById('hangmanPic').src = './assets/0.png';
 
     randomWord();
     guessedWord();

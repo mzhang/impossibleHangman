@@ -1,6 +1,6 @@
 # impossibleHangman
 A (theretically) possible game of hangman built in JS.
 
-I swear my neighbour's kid cheats while playing hangman with me. I'm almost positive he switches up the answer as I'm guessing them.
+Try your luck at zhang.software/hangman/ ! 
 
-So I made a bot to beat him at his own game. 
+There's a strategy to beat the game consistently(that isn't straight up cheating) - can you figure it out?
